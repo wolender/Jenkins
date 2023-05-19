@@ -23,7 +23,7 @@ pipeline {
                       sh 'docker login'
                       sh 'docker pull wolender/snapshot_repo:$VERSION'
                       
-                      sh 'docker run -p 80:8080 --network=my-network -e DB_MODE=$DB_MODE -e MYSQL_URL=jdbc:mysql://$SQL_URL:3306/petclinic -d wolender/release_repo:$VERSION '
+                      sh 'docker run -p 80:8080 --network=my-network -e DB_MODE=$DB_MODE -e MYSQL_URL=jdbc:mysql://$SQL_URL:3306/petclinic -d wolender/snapshot_repo:$VERSION '
                     }
                 }
                 
